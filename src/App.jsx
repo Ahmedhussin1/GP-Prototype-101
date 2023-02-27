@@ -3,12 +3,14 @@ import Contests from './pages/Contests'
 import {createBrowserRouter,createRoutesFromElements,Route,RouterProvider} from 'react-router-dom'
 import RootLayout from './layout/RootLayout'
 import Home from './pages/Home'
+import Problems from './pages/Problems'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout/>}>
       <Route index element ={<Home/>} />
-      <Route path='contests' element={<Contests/>} />
+      <Route path='contests' element={<Contests/>}/>
+      <Route path='/problems/:id' element={<Problems/>}/>
     </Route>
   )
 )
