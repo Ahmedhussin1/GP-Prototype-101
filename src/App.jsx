@@ -1,0 +1,26 @@
+import Navbar from './component/navbar'
+import Contests from './pages/Contests'
+import {createBrowserRouter,createRoutesFromElements,Route,RouterProvider} from 'react-router-dom'
+import RootLayout from './layout/RootLayout'
+import Home from './pages/Home'
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<RootLayout/>}>
+      <Route index element ={<Home/>} />
+      <Route path='contests' element={<Contests/>} />
+    </Route>
+  )
+)
+
+function App() {
+
+  return (
+    <div className="App">
+    {/* <Navbar/> */}
+      <RouterProvider router={router}/>
+    </div>
+  )
+}
+
+export default App
