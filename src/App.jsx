@@ -4,6 +4,7 @@ import {createBrowserRouter,createRoutesFromElements,Route,RouterProvider} from 
 import RootLayout from './layout/RootLayout'
 import Home from './pages/Home'
 import Problems from './pages/Problems'
+import ProblemStatement from './pages/problemStatement'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -11,6 +12,7 @@ const router = createBrowserRouter(
       <Route index element ={<Home/>} />
       <Route path='contests' element={<Contests/>}/>
       <Route path='/problems/:id' element={<Problems/>}/>
+      <Route path='/statement/:id' element={<ProblemStatement/>} />
     </Route>
   )
 )

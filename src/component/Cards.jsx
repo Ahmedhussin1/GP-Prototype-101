@@ -14,11 +14,10 @@ function Cards({post}) {
               <h1 className="font-bold text-2xl ">{post.title}</h1>
             </div>
 
-            <ul className="grid grid-flow-col grid-cols-4 justify-items-center mt-8 text-lg">
+            <ul className="grid grid-flow-col grid-cols-3 justify-items-center mt-8 text-lg">
               <li>{post.diff}</li>
               <li>Length: {post.length}</li>
               <li>{post.desc}</li>
-              <li>{post.tags}</li>
             </ul>
           </div>
         </div>
