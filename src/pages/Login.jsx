@@ -46,7 +46,7 @@ function Login() {
 							</button>
 							<p className="text-sm font-light text-gray-500 dark:text-gray-400">
 								You don't have an account{' '}
-								<Link to={`/register`}>
+								<Link to={`/sign-up`}>
 									<a href="#" className="font-medium text-sky-600 hover:underline dark:text-sky-500">
 										SignUp here
 									</a>
