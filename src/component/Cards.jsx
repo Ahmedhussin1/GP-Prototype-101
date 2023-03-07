@@ -20,31 +20,7 @@ function Cards({ upComing }) {
         </div>
       ))}
     </div>
-    // <div className="">
-    // 	<table className="w-full">
-    // 		<tbody>
-    // 			<tr className="bg-white">
-    // 				<td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-    // 					<Link key={post.id} to={`/problems/${post.id}`}>
-    // 						{post.id}
-    // 					</Link>
-    // 				</td>
-    // 				<td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-    // 					<Link key={post.id} to={`/problems/${post.id}`}>
-    // 						<div className="flex flex-col md:flex-row justify-between">
-    // 							<div>{post.title}</div>
-    // 						</div>
-    // 					</Link>
-    // 				</td>
-    // 				<td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-    // 					<span className="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">{post.diff}</span>
-    // 				</td>
-    // 				<td className="p-3 text-sm text-gray-700 whitespace-nowrap">{post.length}</td>
-    // 			</tr>
-    // 			<Link key={post.id} to={`/problems/${post.id}`}></Link>
-    // 		</tbody>
-    // 	</table>
-    // </div>
+    
   );
 }
 
