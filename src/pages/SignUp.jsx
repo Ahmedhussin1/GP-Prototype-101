@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 function SignUp() {
+
   return (
     <div className="container mx-auto max-w-6xl mt-20">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
@@ -15,7 +16,8 @@ function SignUp() {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#">
+            <form
+            className="space-y-4 md:space-y-6" action="#">
               <div>
                 <label
                   htmlFor="name"
@@ -129,6 +131,7 @@ function SignUp() {
                   </a>
                 </Link>
               </p>
+
             </form>
           </div>
         </div>
