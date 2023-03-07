@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 function Navbar() {
 	return (
 		<nav className="container flex items-center justify-between mx-auto max-w-7xl py-4">
@@ -19,7 +19,7 @@ function Navbar() {
 				<NavLink to="/login" className=" ">
 					Login
 				</NavLink>
-				<NavLink to="/register" className=" ">
+				<NavLink to="/sign-up" className=" ">
 					Register
 				</NavLink>
 				<NavLink to="/profile" className=" ">
