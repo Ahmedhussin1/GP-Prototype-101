@@ -8,6 +8,7 @@ import ProblemStatement from './pages/problemStatement'
 import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
+import About from './pages/About'
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
 			<Route path="sign-up" element={<SignUp />} />
 			<Route path="Login" element={<Login />} />
 			<Route path="profile" element={<Profile />} />
+      <Route path='about' element={<About/>} />
 			<Route path="/problems/:id" element={<Problems />} />
 			<Route path="/statement/:id" element={<ProblemStatement />} />
 		</Route>,
