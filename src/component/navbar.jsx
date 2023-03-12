@@ -1,6 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import pb from '../lib/pocketbase'
+
 function Navbar() {
+	const isLoggedIn = pb.authStore.isValid
 	return (
 		<nav className="container flex items-center justify-between mx-auto max-w-7xl py-4">
 			<NavLink to="/" className="flex items-center">
@@ -16,15 +19,21 @@ function Navbar() {
 				<NavLink to="/about" className=" ">
 					About
 				</NavLink>
-				<NavLink to="/login" className=" ">
-					Login
-				</NavLink>
-				<NavLink to="/sign-up" className=" ">
-					Register
-				</NavLink>
-				<NavLink to="/profile" className=" ">
-					Profile
-				</NavLink>
+
+				{isLoggedIn ? (
+					<NavLink to="/profile" className=" ">
+						Profile
+					</NavLink>
+				) : (
+					<>
+						<NavLink to="/sign-up" className=" ">
+							Register
+						</NavLink>
+						<NavLink to="/login" className=" ">
+							Login
+						</NavLink>
+					</>
+				)}
 			</div>
 		</nav>
 	)
