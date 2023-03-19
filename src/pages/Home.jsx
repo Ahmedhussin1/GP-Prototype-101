@@ -57,7 +57,15 @@ function Home() {
       <div className="grid grid-row-1 grid-cols-4 gap-x-4">
         {/* left side panel */}
         <div className="col-span-3 border-slate-100 rounded-lg p-4 border-2 shadow-sm">
-          <h1 className="font-normal text-3xl mb-5">On Going Contests</h1>
+
+          <div className="flex">
+            <h1 className="font-normal mr-2 text-3xl mb-5">Live Contests</h1>{" "}
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+          </div>
+
           <div className="">
             <Cards upComing={posts} text="what is the wrong" />
           </div>

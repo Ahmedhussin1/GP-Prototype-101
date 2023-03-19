@@ -41,7 +41,7 @@ export const problemsData = [
     },
     {
         id: "3",
-        name: "Ideal Point",
+        name: "Tree master",
         tags: "brute force, implementation, greedy",
         diff: "900",
         solved: "15436",
@@ -61,7 +61,7 @@ export const problemsData = [
     },
     {
         id: "4",
-        name: "Ideal Point",
+        name: "Routing",
         tags: "brute force, implementation, greedy",
         diff: "900",
         solved: "15436",
