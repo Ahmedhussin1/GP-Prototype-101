@@ -5,7 +5,8 @@ import { problemsData } from "../problemsData";
 function Submit() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
-  const data = problemsData[path - 1];
+  console.log(path)
+  const data = problemsData[path-1];
   return (
     <div className="container mx-auto max-w-7xl">
       <div className="mx-auto text-center mt-10 mb-10">
@@ -26,7 +27,10 @@ function Submit() {
           rows="20"
           className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Write your thoughts here..."
-        ></textarea>200 3500 400 7000  
+        ></textarea> 
+      </div>
+      <div>
+        <button className="bg-blue-300 px-2 py-1 rounded-lg text-white">Submit</button>
       </div>
     </div>
   );
