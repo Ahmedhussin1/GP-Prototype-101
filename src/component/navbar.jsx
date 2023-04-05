@@ -7,7 +7,7 @@ function Navbar() {
 	return (
 		<nav className="container flex items-center justify-between mx-auto max-w-7xl py-4">
 			<NavLink to="/" className="flex items-center">
-				<span className="text-3xl font-semibold">THE JUDGE</span>
+				<span className="text-3xl font-semibold">TOP J</span>
 			</NavLink>
 			<div className="flex items-center font-semibold text-xl space-x-8" id="navbar-default">
 				<NavLink to="/" className="" aria-current="page">

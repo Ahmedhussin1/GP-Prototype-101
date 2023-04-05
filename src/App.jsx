@@ -13,6 +13,7 @@ import pb from './lib/pocketbase'
 import PrivateRoute from './PrivateRouters/PrivateRoute'
 import Submit from './pages/Submit'
 import Admin from './pages/Admin'
+import AddingProblems from './pages/AddingProblems'
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -34,7 +35,11 @@ const router = createBrowserRouter(
 			<Route path="/statement/:id" element={<ProblemStatement />}>
 			</Route>
 			<Route path='/submit/:id' element={<Submit/>}/>
-			<Route path='admin' element={<Admin />}/>
+
+			<Route path='admin' element={<Admin />}>
+				<Route path='addingProblems' element={<AddingProblems />}/>
+			</Route>
+
 		</Route>,
 	),
 )
