@@ -12,6 +12,7 @@ import About from './pages/About'
 import pb from './lib/pocketbase'
 import PrivateRoute from './PrivateRouters/PrivateRoute'
 import Submit from './pages/Submit'
+import Admin from './pages/Admin'
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -32,7 +33,8 @@ const router = createBrowserRouter(
 			<Route path="/problems/:id" element={<Problems />} />
 			<Route path="/statement/:id" element={<ProblemStatement />}>
 			</Route>
-				<Route path='/submit/:id' element={<Submit/>}/>
+			<Route path='/submit/:id' element={<Submit/>}/>
+			<Route path='admin' element={<Admin />}/>
 		</Route>,
 	),
 )

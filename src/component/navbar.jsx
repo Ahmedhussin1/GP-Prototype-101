@@ -16,6 +16,9 @@ function Navbar() {
 				<NavLink to="/contests" className="">
 					Contests
 				</NavLink>
+				<NavLink to="/admin" className=''>
+					Create Contest
+				</NavLink>
 				<NavLink to="/about" className=" ">
 					About
 				</NavLink>
