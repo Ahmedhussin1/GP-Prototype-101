@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import TimeField from "react-simple-timefield";
+import AddingProblems from "./AddingProblems";
 function Admin() {
   const [contestName, setContestName] = useState("");
   const [contestDate, setContestDate] = useState("");
@@ -90,8 +91,8 @@ function Admin() {
           {/* text area div */}
           <div className="relative z-0 w-full mb-6 group">
             <textarea
-            value={contestDescription}
-            onChange = {(e) => setContestDescription(e.target.value)}
+              value={contestDescription}
+              onChange={(e) => setContestDescription(e.target.value)}
               id="description"
               rows="10"
               className=" block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -99,16 +100,27 @@ function Admin() {
             ></textarea>
           </div>
           {/* button dev */}
+
+          <Link
+            state={{
+              contestName: contestName,
+              contestDate: contestDate,
+              contestDuration: contestDuration,
+              contestDurationType: contestDurationType,
+              contestDescription: contestDescription,
+            }}
+            to="/addingProblems"
+          >
             <button
               type="submit"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Submit
             </button>
-
+          </Link>
         </form>
       </div>
-      <Outlet/>
+      {/* <Outlet /> */}
     </div>
   );
 }
