@@ -14,6 +14,7 @@ function AddingProblems() {
             {data.contestDuration} {data.contestDurationType}
           </p>
           <p>{data.contestDate}</p>
+          <hr/>
           <p className="font-normal text-gray-700 dark:text-gray-400">
             {data.contestDescription}
           </p>
