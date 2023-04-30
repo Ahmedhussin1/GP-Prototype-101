@@ -56,11 +56,11 @@ function Home () {
         },
     ]
   return (
-    <div className="container mx-auto max-w-7xl space-y-4 my-8">
+    <div className="container mx-auto max-w-7xl grid grid-rows-1 grid-cols-4 gap-x-6 my-6">
       {/* top */}
-      <div className="grid grid-row-1 grid-cols-4 gap-x-4">
+      <div className="flex flex-col col-span-3 space-y-6">
         {/* left side panel */}
-        <div className="col-span-3 space-y-4">
+        <div className=" space-y-6">
           {/* Announcement */}
           <div className=" border-slate-100 rounded-lg p-4 border-2 shadow-sm">
             <p className="font-normal text-3xl mb-5 text-red-500">
@@ -86,20 +86,37 @@ function Home () {
           </div>
         </div>
         {/* right side panel */}
-        <div className="border-slate-100 rounded-lg px-2 py-2 border-2 shadow-sm col-span-1 flex justify-center">
-          {/* first block in side panel */}
-          {/* <div className="pt-4 flex flex-col items-center ">
+        <div className=" border-slate-100 rounded-lg p-4 border-2 shadow-sm">
+          <div className="">
+            <Cards upComing={posts} text="what is the wrong" />
+          </div>
+        </div>
+      </div>
+      {/* right */}
+      <div className="flex flex-col col-span-1 space-y-6">
+        {/* right first */}
+        <div className=" flex justify-center border-slate-100 rounded-lg p-4 border-2 shadow-sm">
+        <div className="pt-4 flex flex-col items-center ">
             <p>Profile</p>
             <div className="flex flex-col items-center mt-4">
-              <img
+            <img
                 src="/public/images/download.jpg"
                 alt=""
-                className="w-32 h-32 rounded-full shadow-lg"
-              />
-              <p className="mt-2">Nagi</p>
-              <p>the Goat</p>
+                className="w-32 h-32 mb-3 rounded-full shadow-lg"
+            />
+            <p>Nagi</p>
             </div>
-          </div> */}
+        </div>
+       </div>
+        {/* right second */ }
+        <div className="border-slate-100 rounded-lg px-2 py-2 border-2 shadow-sm flex flex-col justify-center">
+            <div className="flex pt-4 px-1">
+            <p className="font-normal mr-2 text-3xl mb-5">Live Contests</p>{" "}
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+          </div>
         <table className="w-full ">
             <thead className="bg-gray-50">
                 {/* <tr>
@@ -132,39 +149,6 @@ function Home () {
                     </tbody>
                 ) ) }
         </table>
-    </div>
-      </div>
-      {/* bottom */}
-      <div className="grid grid-row-1 grid-cols-4 gap-x-4">
-        {/* left side panel */}
-        <div className="col-span-3 border-slate-100 rounded-lg p-4 border-2 shadow-sm">
-
-          <div className="flex">
-            <p className="font-normal mr-2 text-3xl mb-5">Live Contests</p>{" "}
-            <span class="relative flex h-3 w-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-            </span>
-          </div>
-
-          <div className="">
-            <Cards upComing={posts} text="what is the wrong" />
-          </div>
-        </div>
-        {/* right side panel */}
-        <div className="col-span-1 flex justify-center border-slate-100 rounded-lg p-4 border-2 shadow-sm">
-          {/* first block in side panel */}
-          <div className="pt-4 flex flex-col items-center ">
-            <p>Profile</p>
-            <div className="flex flex-col items-center mt-4">
-              <img
-                src="/public/images/download.jpg"
-                alt=""
-                className="w-32 h-32 mb-3 rounded-full shadow-lg"
-              />
-              <p>Nagi</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
