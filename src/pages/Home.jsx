@@ -1,57 +1,138 @@
-import React from "react";
+import React, {useState} from "react";
 import Cards from "../component/Cards";
 import Examples from "../component/Examples";
 import { upComing } from "../upComing";
 import { posts } from "../data";
+import { Link } from "react-router-dom";
+import ContestTable from "../component/ContestTable";
 
-function Home() {
+function Home () {
+    const [ contestName, setContestName ] = useState( '' )
+    const Images = [
+        {
+            id: 1,
+            src: "../../public/images/mid1.png",
+        },
+
+        {
+            id: 2,
+            src: "../../public/images/mid2.png",
+        },
+        {
+            id: 3,
+            src: "../../public/images/tech1.png",
+        },
+        {
+            id: 4,
+            src: "../../public/images/tech2.png",
+        },
+        {
+            id: 5,
+            src: "../../public/images/tech3.png",
+        },
+        {
+            id: 6,
+            src: "../../public/images/tech4.png",
+        },
+        {
+            id: 7,
+            src: "../../public/images/tech5.png",
+        },
+        {
+            id: 8,
+            src: "../../public/images/tech5.png",
+        },
+        {
+            id: 9,
+            src: "../../public/images/tech5.png",
+        },
+        {
+            id: 10,
+            src: "../../public/images/tech5.png",
+        },
+        {
+            id: 11,
+            src: "../../public/images/tech5.png",
+        },
+    ]
   return (
-    <div className="container mx-auto max-w-7xl space-y-4">
+    <div className="container mx-auto max-w-7xl space-y-4 my-8">
       {/* top */}
       <div className="grid grid-row-1 grid-cols-4 gap-x-4">
         {/* left side panel */}
         <div className="col-span-3 space-y-4">
           {/* Announcement */}
           <div className=" border-slate-100 rounded-lg p-4 border-2 shadow-sm">
-            <h1 className="font-normal text-3xl mb-5 text-red-500">
+            <p className="font-normal text-3xl mb-5 text-red-500">
               ANNOUNCEMENT 📢
-            </h1>
+            </p>
             <div className="">
-              <h1 className="text-2xl">
-                The Launch Of The Website Will be Next August 🎉
-              </h1>
-              <h2>
-                This Is A Project Done By The Students Of 6-October's Computer
-                Science Major As A Graduation Project
-              </h2>
+              <p className="text-2xl">
+                The Launch Of The Website Will be Next August  🎉
+              </p>
+              <p>
+                A based judge to escape the MATRIX
+              </p>
             </div>
           </div>
           {/* left side panel */}
           <div className=" border-slate-100 rounded-lg p-4 border-2 shadow-sm">
-            <h1 className="font-normal text-3xl mb-5">
+            <p className="font-normal text-3xl mb-5">
               Up Coming Contests 🤩{" "}
-            </h1>
+            </p>
             <div className="">
               <Cards upComing={upComing} text="what is the wrong" />
             </div>
           </div>
         </div>
         {/* right side panel */}
-        <div className="border-slate-100 rounded-lg p-4 border-2 shadow-sm col-span-1 flex justify-center ">
+        <div className="border-slate-100 rounded-lg px-2 py-2 border-2 shadow-sm col-span-1 flex justify-center">
           {/* first block in side panel */}
-          <div className="pt-4 flex flex-col items-center ">
-            <h3>Profile</h3>
+          {/* <div className="pt-4 flex flex-col items-center ">
+            <p>Profile</p>
             <div className="flex flex-col items-center mt-4">
               <img
                 src="/public/images/download.jpg"
                 alt=""
-                className="w-32 h-32  rounded-full shadow-lg"
+                className="w-32 h-32 rounded-full shadow-lg"
               />
               <p className="mt-2">Nagi</p>
               <p>the Goat</p>
             </div>
-          </div>
-        </div>
+          </div> */}
+        <table className="w-full ">
+            <thead className="bg-gray-50">
+                {/* <tr>
+                    <th className="w-20 p-3 text-sm font-semibold tracking-wide text-left"></th>
+                    <th className="p-3 text-sm font-semibold tracking-wide text-left">Name</th>
+                </tr> */}
+            </thead>
+            {posts
+                .filter((contest) => contest.title.toLowerCase().includes(contestName))
+                .map((post) => (
+                    <tbody className="">
+                        <tr className="bg-white">
+                            <td className="py-2 text-sm text-gray-700 whitespace-nowrap w-14">
+                                <Link key={post.id} to={`/problems/${post.id}`}>
+                                    { posts.length === 0 ? <img src={Images[post.id].src} alt="test" className=" h-14 w-24 object-cover rounded-md "/> : <img src={Images[post.id - 1].src} alt="test" className=" h-14 w-24 object-cover rounded-md"/> }
+                                </Link>
+
+                            <p className="absolute text-white text-xl bottom-4 left-4">Length: { post.length }</p>
+                            </td>
+                            <td className="py-2 px-2 text-sm text-gray-700 whitespace-nowrap w-4">
+                                <Link key={post.id} to={`/problems/${post.id}`}>
+                                    <div className="flex flex-col justify-between space-y-2 w-20">
+                                        <div className='text-sm font-semibold'>{ post.title }</div>
+                                        <div className='text-[10px] font-light'>{ post.date }</div>
+                                    </div>
+                                </Link>
+                            </td>
+                        </tr>
+                        <Link key={post.id} to={`/problems/${post.id}`}></Link>
+                    </tbody>
+                ) ) }
+        </table>
+    </div>
       </div>
       {/* bottom */}
       <div className="grid grid-row-1 grid-cols-4 gap-x-4">
@@ -59,7 +140,7 @@ function Home() {
         <div className="col-span-3 border-slate-100 rounded-lg p-4 border-2 shadow-sm">
 
           <div className="flex">
-            <h1 className="font-normal mr-2 text-3xl mb-5">Live Contests</h1>{" "}
+            <p className="font-normal mr-2 text-3xl mb-5">Live Contests</p>{" "}
             <span class="relative flex h-3 w-3">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
@@ -74,7 +155,7 @@ function Home() {
         <div className="col-span-1 flex justify-center border-slate-100 rounded-lg p-4 border-2 shadow-sm">
           {/* first block in side panel */}
           <div className="pt-4 flex flex-col items-center ">
-            <h3>Profile</h3>
+            <p>Profile</p>
             <div className="flex flex-col items-center mt-4">
               <img
                 src="/public/images/download.jpg"
